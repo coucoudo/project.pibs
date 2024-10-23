@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style2.css">
+    <title>Cou PROFILE</title>
+    
+</head>
+<body>
+
+    <header>
+        <img src="gokss1.jpg" class="profile" alt="Profile Photo">
+        <h1>My Profile</h1>
+    </header>
+
+    <div class="content-wrapper">
+        <nav>
+            <button onclick="showSection('biodata')">Biodata</button>
+            <button onclick="showSection('pendidikan')">Pendidikan</button>
+            <button onclick="showSection('pengalaman')">Pengalaman</button>
+            <button onclick="showSection('keahlian')">Keahlian</button>
+            <button onclick="showSection('publikasi')">Publikasi</button>
+        </nav>
+
+        <section id="biodata">
+            <h2>Biodata</h2>
+            <p>NIM: 2023081045</p>
+            <p>Nama: Muhammad Rivaldo Firdaus</p>
+            <p>Agama: Islam</p>
+            <p>Tanggal Lahir: 10 Desember 2004</p>
+            <p>Tempat Lahir: Jakarta</p>
+        </section>
+
+        <section id="pendidikan">
+            <h2>Pendidikan</h2>
+            <p>Saat ini saya sedang menempuh studi di Universitas Pembangunan Jaya, jurusan Sistem Informasi.</p>
+            <ul>
+                <li>2017 - SD Negeri Jombang 01</li>
+                <li>2020 - SMP Negeri 7 Tangerang Selatan</li>
+                <li>2023 - SMA Negeri 11 Tangerang Selatan</li>
+            </ul>
+        </section>
+
+        <section id="pengalaman">
+            <h2>Pengalaman</h2> 
+            <p>Berikut adalah pengalaman yang saya miliki dalam berorganisasi:</p>
+            <ul>
+                <li>Wakil Ketua Pelaksan Departemen Gathering (2024)</li>
+                <li>Ketua Pelaksana Safari Techno (2024)</li>
+            </ul>
+        </section>
+
+        <section id="keahlian">
+            <h2>Keahlian</h2>
+            <ul>
+                <li>HTML</li>
+                <li>UI/UX Design</li>
+                <li>Public Speaking</li>
+                <li>Leadership</li>
+            </ul>
+        </section>
+
+        <section id="publikasi">
+            <h2>Publikasi</h2>
+            <ul>
+                <li>Artikel tentang "Pengaruh Teknologi Blockchain terhadap Sistem Informasi" (2023)</li>
+                <li>Jurnal tentang "Keamanan Sistem dalam Pengembangan Aplikasi Web" (2022)</li>
+            </ul>
+        </section>
+
+        <aside>
+            <h3>Hobi</h3>
+            <ul>
+                <li>Bermain Golf</li>
+                <li>Bermain Basket</li>
+                <li>Berenang</li>
+                <li>Mendengarkan Musik</li>
+                <li>Bermain Kartu Remi</li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="left-text">
+                <span>Instagram: @mrivaldofrds</span>
+                <span>Tiktok: @itscoucou_do</span>
+                <span>Snapchat: @mrivaldofrds10</span>
+            </div>
+            <p>&copy; 2024 My Profile. Pengeolahan Berbasis Script.</p>
+            <div class="right-text">
+                <span class="cou-profile">Cou PROFILE</span>
+                <span>Project Membuat Web Profile</span>
+            </div>        
+        </div>
+    </footer>
+
+    <script>
+        // Fungsi untuk menampilkan bagian yang dipilih
+        function showSection(sectionId) {
+        
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            var selectedSection = document.getElementById(sectionId);
+            selectedSection.style.display = 'block';
+        }
+
+        // Menambahkan event listener untuk setiap tombol navigasi
+        document.querySelectorAll('nav button').forEach(button => {
+            button.addEventListener('click', function() {
+                var sectionId = this.getAttribute('onclick').match(/'([^']+)'/)[1]; // Ambil ID dari onclick
+                console.log('Navigating to section:', sectionId); // Log ID untuk debugging
+                showSection(sectionId);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('biodata');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(to right, #0066cc, #004c99);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.profile {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid wheat;
+    margin-right: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 32px;
+    text-align: left;
+    color: wheat;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    padding: 0px;
+    gap: 0px;
+}
+
+nav {
+    flex: 1;
+    width: 25%;
+    background-color: #280ab1;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(2, 3, 48, 0.1);
+}
+
+nav button {
+    display: block;
+    width: 100%;
+    background: #250d68;
+    color: wheat;
+    border: none;
+    padding: 12px;
+    margin: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+nav button:hover {
+    background: #004c99;
+    transform: scale(1.05);
+}
+
+section {
+    flex: 3;
+    background: rgb(152, 159, 226);
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+aside {
+    background: #151235;
+    padding: 35px;
+    box-shadow: 0 2px 10px rgba(161, 195, 201, 0.1);
+    color: wheat;
+}
+
+footer {
+    background: linear-gradient(to right, #0066cc, #004c99);
+    color: white;
+    padding: 20px;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.right-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-text span {
+    font-size: 14px;
+    color: wheat;
+}
+
+.cou-profile {
+    font-size: 40px; /* Memperbesar ukuran font */
+    font-weight: bold; /* Menebalkan font */
+    color: wheat;
+}
+
+.right-text {
+    font-size: 14px;
+    color: wheat;
+}
+
+p {
+    margin: 0;
+}
+
+/* Responsive layout for various screen sizes */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    nav{
+        width: 25%;
+    }
+
+    section {
+        width: 75%;
+    }
+
+    aside {
+        width: 100%;
+    }
+}
+
+/* Layout landscape: Nav dan section berdampingan kiri kanan */
+@media (max-width: 768px) {
+    .content-wrapper {
+        display: flex;
+        flex-direction: column; /* Nav dan section berdampingan kiri kanan */
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    
+    nav {
+        flex: 1;
+        width: 100%; /* Buat navigation mengambil 30% lebar */
+    }
+
+    section {
+        flex: 2;
+        width: 100%; /* Buat section mengambil 70% lebar */
+    }
+
+    aside {
+        order: 1; /* Aside tetap di bawah nav dan section */
+        width: 100%; /* Lebar aside 100% di landscape */
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        flex-direction: row;
+    }
+
+    header h1 {
+        font-size: 24px; /* Kecilkan ukuran font judul */
+        text-align: center; /* Rata tengah */
+    }
+
+    nav, aside {
+        padding: 10px; /* Kecilkan padding untuk mobile */
+    }
+
+    nav button {
+        padding: 10px; /* Kecilkan padding tombol */
+    }
+
+    section {
+        padding: 15px; /* Kecilkan padding section */
+    }
+
+    footer {
+        font-size: 12px; /* Kecilkan ukuran font footer */
+    }
+
+    .cou-profile {
+        font-size: 32px; /* Kecilkan ukuran font Cou PROFILE */
+    }
+}
